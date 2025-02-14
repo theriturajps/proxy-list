@@ -29,10 +29,21 @@ def update_readme(count):
             content = f.read()
     except FileNotFoundError:
         content = "# Proxy List\n\n"
-        
-    content = re.sub(r"Last Updated:.*", f"Last Updated: `{now}`", content)
-    content = re.sub(r"Total Proxies:.*", f"Total Proxies: `{count}`", content)
+
+    # Update Last Updated with proper bold formatting
+    content = re.sub(
+        r'\*\*Last Updated:\*\*.*',
+        f'**Last Updated:** `{now}`  ',  # Note: Two spaces at end for line break
+        content
+    )
     
+    # Update Total Proxies with proper bold formatting
+    content = re.sub(
+        r'\*\*Total Proxies:\*\*.*',
+        f'**Total Proxies:** `{count}`',
+        content
+    )
+
     with open("README.md", "w") as f:
         f.write(content)
 
