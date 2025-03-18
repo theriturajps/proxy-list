@@ -2,8 +2,8 @@
 
 Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies for web scraping, cybersecurity, and testing. Raw list available.
 
-**Last Updated:** `Tuesday 18-03-2025 03:29:11 UTC`  
-**Total Proxies:** `512`
+**Last Updated:** `Tuesday 18-03-2025 04:18:54 UTC`  
+**Total Proxies:** `515`
 
 ## 📥 Download
 ```bash
