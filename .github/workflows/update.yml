@@ -31,8 +31,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --global user.name "Proxy List Updater"
-        git config --global user.email "proxy-updater@users.noreply.github.com"
+        git config --global user.name "Ritu Raj Pratap Singh"
+        git config --global user.email "theriturajps@gmail.com"
         git add .
         git commit -m "Updated ➠ $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
         git push
