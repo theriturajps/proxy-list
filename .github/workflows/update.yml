@@ -33,6 +33,7 @@ jobs:
         
     - name: Update proxies
       run: python update_proxies.py
+      timeout-minutes: 30  # Add timeout to prevent workflow from running too long
       
     - name: Commit and push if changes
       run: |

@@ -22,7 +22,7 @@ logger = logging.getLogger("proxy_scraper")
 
 # Constants
 TIMEOUT = 10
-MAX_WORKERS = 10
+MAX_WORKERS = 20  # Increased from 10 for faster processing
 VALIDATION_TIMEOUT = 5
 CONNECTION_TIMEOUT = 5
 VALIDATION_URL = "http://httpbin.org/ip"
@@ -121,35 +121,19 @@ class ProxyScraper:
             response.raise_for_status()
             
             # Handle different response formats (plain text, JSON)
-            if "json" in response.headers.get("Content-Type", ""):
-                data = response.json()
-                # Handle different JSON structures
-                if isinstance(data, list):
-                    for item in data:
-                        if isinstance(item, dict):
-                            ip = item.get("ip") or item.get("host") or item.get("addr")
-                            port = item.get("port")
-                            if ip and port:
-                                proxy = Proxy(
-                                    ip=ip,
-                                    port=int(port),
-                                    protocol=item.get("protocol", "http"),
-                                    country=item.get("country", ""),
-                                    anonymity=item.get("anonymity", ""),
-                                    speed=float(item.get("speed", 0)),
-                                    last_checked=item.get("last_checked", "")
-                                )
-                                self._add_proxy(proxy)
-                                count += 1
-                elif isinstance(data, dict):
-                    # Handle nested data structures
-                    for key in ["data", "proxies", "items", "results"]:
-                        if key in data and isinstance(data[key], list):
-                            for item in data[key]:
-                                if isinstance(item, dict):
-                                    ip = item.get("ip") or item.get("host") or item.get("addr")
-                                    port = item.get("port")
-                                    if ip and port:
+            content_type = response.headers.get("Content-Type", "").lower()
+            
+            if "json" in content_type:
+                try:
+                    data = response.json()
+                    # Handle different JSON structures
+                    if isinstance(data, list):
+                        for item in data:
+                            if isinstance(item, dict):
+                                ip = item.get("ip") or item.get("host") or item.get("addr")
+                                port = item.get("port")
+                                if ip and port:
+                                    try:
                                         proxy = Proxy(
                                             ip=ip,
                                             port=int(port),
@@ -161,7 +145,37 @@ class ProxyScraper:
                                         )
                                         self._add_proxy(proxy)
                                         count += 1
-            else:
+                                    except (ValueError, TypeError):
+                                        continue
+                    elif isinstance(data, dict):
+                        # Handle nested data structures
+                        for key in ["data", "proxies", "items", "results"]:
+                            if key in data and isinstance(data[key], list):
+                                for item in data[key]:
+                                    if isinstance(item, dict):
+                                        ip = item.get("ip") or item.get("host") or item.get("addr")
+                                        port = item.get("port")
+                                        if ip and port:
+                                            try:
+                                                proxy = Proxy(
+                                                    ip=ip,
+                                                    port=int(port),
+                                                    protocol=item.get("protocol", "http"),
+                                                    country=item.get("country", ""),
+                                                    anonymity=item.get("anonymity", ""),
+                                                    speed=float(item.get("speed", 0)),
+                                                    last_checked=item.get("last_checked", "")
+                                                )
+                                                self._add_proxy(proxy)
+                                                count += 1
+                                            except (ValueError, TypeError):
+                                                continue
+                except json.JSONDecodeError:
+                    # Fallback to text processing if JSON parsing fails
+                    pass
+            
+            # Process as text (either because it's not JSON or JSON parsing failed)
+            if count == 0:
                 # Handle plain text responses
                 for line in response.text.split('\n'):
                     line = line.strip()
@@ -177,6 +191,9 @@ class ProxyScraper:
     
     def _parse_proxy_from_text(self, text: str) -> Optional[Proxy]:
         """Parse proxy information from text line"""
+        if not text:
+            return None
+            
         # Match IP:Port pattern
         ip_port_match = re.match(r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+)$', text)
         if ip_port_match:
@@ -193,35 +210,55 @@ class ProxyScraper:
     
     def _add_proxy(self, proxy: Proxy) -> None:
         """Add proxy to the collection, avoiding duplicates"""
-        self.proxies[proxy.address] = proxy
+        try:
+            # Basic IP validation
+            ipaddress.ip_address(proxy.ip)
+            
+            # Port validation
+            if not (1 <= proxy.port <= 65535):
+                return
+                
+            self.proxies[proxy.address] = proxy
+        except ValueError:
+            # Invalid IP address
+            pass
     
     def validate_proxies(self, max_workers: int = MAX_WORKERS) -> None:
         """Validate all proxies concurrently and keep track of working ones"""
         logger.info(f"Starting validation of {len(self.proxies)} proxies")
         
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_proxy = {executor.submit(self._validate_proxy, proxy): proxy 
-                              for proxy in self.proxies.values()}
+        # Split validation into batches to avoid overwhelming resources
+        batch_size = 100
+        proxy_list = list(self.proxies.values())
+        total_proxies = len(proxy_list)
+        validated_count = 0
+        working_count = 0
+        
+        for i in range(0, total_proxies, batch_size):
+            batch = proxy_list[i:min(i+batch_size, total_proxies)]
+            logger.info(f"Validating batch {i//batch_size + 1}/{(total_proxies + batch_size - 1)//batch_size}")
             
-            completed = 0
-            total = len(future_to_proxy)
-            
-            for future in concurrent.futures.as_completed(future_to_proxy):
-                proxy = future_to_proxy[future]
-                try:
-                    proxy.working, proxy.speed = future.result()
-                    proxy.last_checked = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-                    
-                    completed += 1
-                    if completed % 50 == 0 or completed == total:
-                        working_count = sum(1 for p in self.proxies.values() if p.working)
-                        logger.info(f"Validated {completed}/{total} proxies. Working: {working_count}")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+                future_to_proxy = {executor.submit(self._validate_proxy, proxy): proxy for proxy in batch}
+                
+                for future in concurrent.futures.as_completed(future_to_proxy):
+                    proxy = future_to_proxy[future]
+                    try:
+                        proxy.working, proxy.speed = future.result()
+                        proxy.last_checked = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
                         
-                except Exception as exc:
-                    logger.error(f"Error validating {proxy.address}: {exc}")
-                    
-        working_count = sum(1 for p in self.proxies.values() if p.working)
-        logger.info(f"Validation complete. Working proxies: {working_count}/{len(self.proxies)}")
+                        if proxy.working:
+                            working_count += 1
+                            
+                        validated_count += 1
+                        if validated_count % 20 == 0 or validated_count == len(batch):
+                            logger.info(f"Progress: {validated_count}/{total_proxies} proxies validated. Working: {working_count}")
+                            
+                    except Exception as exc:
+                        logger.error(f"Error validating {proxy.address}: {exc}")
+                        validated_count += 1
+        
+        logger.info(f"Validation complete. Working proxies: {working_count}/{total_proxies}")
     
     def _validate_proxy(self, proxy: Proxy) -> Tuple[bool, float]:
         """Validate a single proxy and return working status and speed"""
@@ -244,15 +281,21 @@ class ProxyScraper:
             if response.status_code == 200:
                 speed = (end_time - start_time).total_seconds()
                 # Verify the response contains the proxy's IP (anonymous check)
-                data = response.json()
-                if "origin" in data:
-                    # For anonymous proxies, the origin might be different from the proxy IP
-                    if data["origin"] != proxy.ip:
-                        proxy.anonymity = "high"
-                    else:
-                        proxy.anonymity = "transparent"
-                return True, speed
-        except Exception:
+                try:
+                    data = response.json()
+                    if "origin" in data:
+                        # For anonymous proxies, the origin might be different from the proxy IP
+                        if data["origin"] != proxy.ip:
+                            proxy.anonymity = "high"
+                        else:
+                            proxy.anonymity = "transparent"
+                    return True, speed
+                except json.JSONDecodeError:
+                    # If response is not valid JSON, still mark as working but cannot determine anonymity
+                    proxy.anonymity = "unknown"
+                    return True, speed
+        except requests.exceptions.RequestException:
+            # Any request exception means the proxy is not working
             pass
             
         return False, 0.0
@@ -323,6 +366,7 @@ class ProxyScraper:
             "transparent": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "transparent"),
             "anonymous": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "anonymous"),
             "high": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "high"),
+            "unknown": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "unknown"),
         }
         
         # Create statistics by country if available
@@ -333,7 +377,7 @@ class ProxyScraper:
         
         readme_content = f"""# Proxy List
 
-Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies for web scraping, cybersecurity, and testing.
+Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies for web scraping, cybersecurity, and testing. Raw list available.
 
 **Last Updated:** `{now}`  
 **Total Proxies:** `{total_proxies}`
@@ -344,25 +388,23 @@ Automatically updated repository of free public proxies. Hourly refreshed HTTP/H
   - High Anonymous: `{anonymity_levels['high']}`
   - Anonymous: `{anonymity_levels['anonymous']}`
   - Transparent: `{anonymity_levels['transparent']}`
+  - Unknown: `{anonymity_levels['unknown']}`
 
 ## 📥 Download
-
-### Plain Text (IP:PORT format)
 ```bash
 curl -O https://raw.githubusercontent.com/theriturajps/proxy-list/main/proxies.txt
 ```
 
-### JSON Format (with detailed information)
+### Advanced Formats (with detailed information)
 ```bash
+# JSON Format
 curl -O https://raw.githubusercontent.com/theriturajps/proxy-list/main/output/working_proxies.json
-```
 
-### CSV Format (with detailed information)
-```bash
+# CSV Format
 curl -O https://raw.githubusercontent.com/theriturajps/proxy-list/main/output/working_proxies.csv
 ```
 
-## 📋 Usage
+## 📋 Usage Examples
 
 ### Python
 ```python
