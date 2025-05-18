@@ -1,58 +1,35 @@
-name: Proxy List Update
+name: Proxy List Updater
 
 on:
   schedule:
     - cron: '0 * * * *'  # Run hourly
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # Fetch all history to avoid git conflicts
+    - uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        cache: 'pip'
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        
-    - name: Create output directory
-      run: mkdir -p output
-        
+      run: pip install requests
+
     - name: Update proxies
       run: python update_proxies.py
-      timeout-minutes: 30  # Add timeout to prevent workflow from running too long
-      
-    - name: Commit and push if changes
+
+    - name: Commit changes
       run: |
-        git config --global user.name "Ritu Raj Pratap Singh"
-        git config --global user.email "theriturajps@gmail.com"
-        
-        # Add all changes
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
         git add .
-        
-        # Check if there are changes to commit
-        if ! git diff-index --quiet HEAD; then
-          # Get the count of working proxies
-          PROXY_COUNT=$(wc -l < proxies.txt)
-          
-          # Create a detailed commit message
-          git commit -m "Updated ➠ $(date -u +'%Y-%m-%d %H:%M UTC') [$PROXY_COUNT proxies]"
-          
-          # Push changes
-          git push
-        else
-          echo "No changes to commit"
-        fi
+        git commit -m "Auto-update proxies [skip ci]" || echo "No changes to commit"
+        git push

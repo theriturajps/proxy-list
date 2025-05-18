@@ -1,4 +1,0 @@
-requests>=2.28.0
-ipaddress>=1.0.23
-typing-extensions>=4.0.0
-dataclasses>=0.6; python_version < "3.7"
