@@ -1,0 +1,1452 @@
+{
+  "83.168.74.163:8080": {
+    "ip": "83.168.74.163",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8142750263214111,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "79.110.201.235:8081": {
+    "ip": "79.110.201.235",
+    "port": 8081,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7366323471069336,
+    "last_checked": "2025-05-18 17:02:42 UTC",
+    "working": true
+  },
+  "78.80.228.150:80": {
+    "ip": "78.80.228.150",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6247713565826416,
+    "last_checked": "2025-05-18 17:02:42 UTC",
+    "working": true
+  },
+  "119.3.113.151:9094": {
+    "ip": "119.3.113.151",
+    "port": 9094,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.1014680862426758,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "135.181.154.225:80": {
+    "ip": "135.181.154.225",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.3531897068023682,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "79.110.200.27:8000": {
+    "ip": "79.110.200.27",
+    "port": 8000,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5908074378967285,
+    "last_checked": "2025-05-18 17:02:42 UTC",
+    "working": true
+  },
+  "119.3.113.152:9094": {
+    "ip": "119.3.113.152",
+    "port": 9094,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8029325008392334,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "123.30.154.171:7777": {
+    "ip": "123.30.154.171",
+    "port": 7777,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9180123805999756,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "159.203.61.169:3128": {
+    "ip": "159.203.61.169",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5492770671844482,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "83.168.72.172:8081": {
+    "ip": "83.168.72.172",
+    "port": 8081,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5664212703704834,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "115.127.31.66:8080": {
+    "ip": "115.127.31.66",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9921808242797852,
+    "last_checked": "2025-05-18 17:02:43 UTC",
+    "working": true
+  },
+  "59.53.80.122:10024": {
+    "ip": "59.53.80.122",
+    "port": 10024,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8026721477508545,
+    "last_checked": "2025-05-18 17:02:44 UTC",
+    "working": true
+  },
+  "47.56.110.204:8989": {
+    "ip": "47.56.110.204",
+    "port": 8989,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7512285709381104,
+    "last_checked": "2025-05-18 17:02:44 UTC",
+    "working": true
+  },
+  "103.10.231.189:8080": {
+    "ip": "103.10.231.189",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.131760597229004,
+    "last_checked": "2025-05-18 17:02:45 UTC",
+    "working": true
+  },
+  "95.66.244.250:8080": {
+    "ip": "95.66.244.250",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6654438972473145,
+    "last_checked": "2025-05-18 17:02:45 UTC",
+    "working": true
+  },
+  "80.249.112.162:80": {
+    "ip": "80.249.112.162",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5297107696533203,
+    "last_checked": "2025-05-18 17:02:45 UTC",
+    "working": true
+  },
+  "185.105.102.189:80": {
+    "ip": "185.105.102.189",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8832263946533203,
+    "last_checked": "2025-05-18 17:02:45 UTC",
+    "working": true
+  },
+  "218.77.183.214:5224": {
+    "ip": "218.77.183.214",
+    "port": 5224,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.0377235412597656,
+    "last_checked": "2025-05-18 17:02:46 UTC",
+    "working": true
+  },
+  "101.132.222.120:80": {
+    "ip": "101.132.222.120",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7514007091522217,
+    "last_checked": "2025-05-18 17:02:46 UTC",
+    "working": true
+  },
+  "203.19.38.114:1080": {
+    "ip": "203.19.38.114",
+    "port": 1080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.976693868637085,
+    "last_checked": "2025-05-18 17:02:46 UTC",
+    "working": true
+  },
+  "84.39.112.144:3128": {
+    "ip": "84.39.112.144",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5061700344085693,
+    "last_checked": "2025-05-18 17:02:46 UTC",
+    "working": true
+  },
+  "23.247.136.248:80": {
+    "ip": "23.247.136.248",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.1540052890777588,
+    "last_checked": "2025-05-18 17:02:47 UTC",
+    "working": true
+  },
+  "176.223.95.213:8080": {
+    "ip": "176.223.95.213",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6592214107513428,
+    "last_checked": "2025-05-18 17:02:47 UTC",
+    "working": true
+  },
+  "194.183.190.10:8080": {
+    "ip": "194.183.190.10",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8139247894287109,
+    "last_checked": "2025-05-18 17:02:47 UTC",
+    "working": true
+  },
+  "93.119.21.81:8080": {
+    "ip": "93.119.21.81",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6427807807922363,
+    "last_checked": "2025-05-18 17:02:47 UTC",
+    "working": true
+  },
+  "38.250.126.201:999": {
+    "ip": "38.250.126.201",
+    "port": 999,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.597531795501709,
+    "last_checked": "2025-05-18 17:02:47 UTC",
+    "working": true
+  },
+  "57.129.81.201:3128": {
+    "ip": "57.129.81.201",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.6028649806976318,
+    "last_checked": "2025-05-18 17:02:48 UTC",
+    "working": true
+  },
+  "138.68.60.8:80": {
+    "ip": "138.68.60.8",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.2816753387451172,
+    "last_checked": "2025-05-18 17:02:46 UTC",
+    "working": true
+  },
+  "23.237.210.82:80": {
+    "ip": "23.237.210.82",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.08135628700256348,
+    "last_checked": "2025-05-18 17:02:46 UTC",
+    "working": true
+  },
+  "185.63.90.94:8080": {
+    "ip": "185.63.90.94",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.1728370189666748,
+    "last_checked": "2025-05-18 17:02:47 UTC",
+    "working": true
+  },
+  "187.249.114.252:8080": {
+    "ip": "187.249.114.252",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.31624841690063477,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "161.35.70.249:8080": {
+    "ip": "161.35.70.249",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7293643951416016,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "45.170.226.250:999": {
+    "ip": "45.170.226.250",
+    "port": 999,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.41419219970703125,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "45.12.150.82:8080": {
+    "ip": "45.12.150.82",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.501105785369873,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "116.62.159.214:7789": {
+    "ip": "116.62.159.214",
+    "port": 7789,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8890724182128906,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "182.253.109.12:8080": {
+    "ip": "182.253.109.12",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.0767085552215576,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "139.59.1.14:80": {
+    "ip": "139.59.1.14",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.4033873081207275,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "78.188.152.209:1454": {
+    "ip": "78.188.152.209",
+    "port": 1454,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.4118235111236572,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "117.250.3.58:8080": {
+    "ip": "117.250.3.58",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.0316359996795654,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "57.129.81.201:8080": {
+    "ip": "57.129.81.201",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8982272148132324,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "77.242.98.39:8080": {
+    "ip": "77.242.98.39",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.5503146648406982,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "57.129.81.201:8081": {
+    "ip": "57.129.81.201",
+    "port": 8081,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.0704121589660645,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "116.227.52.29:6888": {
+    "ip": "116.227.52.29",
+    "port": 6888,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7023508548736572,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "57.129.81.201:999": {
+    "ip": "57.129.81.201",
+    "port": 999,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.0719811916351318,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "54.177.66.227:8080": {
+    "ip": "54.177.66.227",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.4006922245025635,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "172.188.122.92:80": {
+    "ip": "172.188.122.92",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8177633285522461,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "115.239.234.43:7302": {
+    "ip": "115.239.234.43",
+    "port": 7302,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.35242152214050293,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "16.163.88.228:80": {
+    "ip": "16.163.88.228",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.3399372100830078,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "140.238.30.184:8080": {
+    "ip": "140.238.30.184",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6564908027648926,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "77.75.95.14:80": {
+    "ip": "77.75.95.14",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.3834202289581299,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "88.135.72.7:80": {
+    "ip": "88.135.72.7",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.824167013168335,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "89.58.57.45:80": {
+    "ip": "89.58.57.45",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5779037475585938,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "91.103.120.55:80": {
+    "ip": "91.103.120.55",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.0435471534729004,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "190.2.143.81:8080": {
+    "ip": "190.2.143.81",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5025339126586914,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "60.187.244.115:8085": {
+    "ip": "60.187.244.115",
+    "port": 8085,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.064483880996704,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "49.12.216.1:80": {
+    "ip": "49.12.216.1",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5250589847564697,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "91.239.7.66:80": {
+    "ip": "91.239.7.66",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.680208683013916,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "218.92.86.202:8689": {
+    "ip": "218.92.86.202",
+    "port": 8689,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.9856071472167969,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "218.75.224.4:3309": {
+    "ip": "218.75.224.4",
+    "port": 3309,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.802264928817749,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "185.105.102.179:80": {
+    "ip": "185.105.102.179",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.6957919597625732,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "47.56.110.204:8990": {
+    "ip": "47.56.110.204",
+    "port": 8990,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.2001900672912598,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "81.12.96.209:80": {
+    "ip": "81.12.96.209",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8094322681427002,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "91.227.248.40:80": {
+    "ip": "91.227.248.40",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.3324546813964844,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "162.223.90.150:80": {
+    "ip": "162.223.90.150",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.2555835247039795,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "60.187.246.228:8085": {
+    "ip": "60.187.246.228",
+    "port": 8085,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7330403327941895,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "117.72.106.195:5890": {
+    "ip": "117.72.106.195",
+    "port": 5890,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 2.959468126296997,
+    "last_checked": "2025-05-18 17:02:53 UTC",
+    "working": true
+  },
+  "123.154.30.68:8085": {
+    "ip": "123.154.30.68",
+    "port": 8085,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7303118705749512,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "60.187.244.66:8085": {
+    "ip": "60.187.244.66",
+    "port": 8085,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8497171401977539,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "119.3.113.150:9094": {
+    "ip": "119.3.113.150",
+    "port": 9094,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6658909320831299,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "128.199.202.122:3128": {
+    "ip": "128.199.202.122",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.151195764541626,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "102.132.38.247:8080": {
+    "ip": "102.132.38.247",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.043501853942871,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "103.120.146.11:8080": {
+    "ip": "103.120.146.11",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6566548347473145,
+    "last_checked": "2025-05-18 17:02:50 UTC",
+    "working": true
+  },
+  "103.162.16.47:8080": {
+    "ip": "103.162.16.47",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.092778205871582,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "103.249.120.167:80": {
+    "ip": "103.249.120.167",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9844200611114502,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "103.79.131.70:13001": {
+    "ip": "103.79.131.70",
+    "port": 13001,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9154021739959717,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "103.86.109.38:80": {
+    "ip": "103.86.109.38",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.44158124923706055,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "107.162.143.146:80": {
+    "ip": "107.162.143.146",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.20296859741210938,
+    "last_checked": "2025-05-18 17:02:51 UTC",
+    "working": true
+  },
+  "109.197.153.25:8888": {
+    "ip": "109.197.153.25",
+    "port": 8888,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.774303674697876,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "111.21.252.170:8888": {
+    "ip": "111.21.252.170",
+    "port": 8888,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.6042945384979248,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "111.59.117.17:9091": {
+    "ip": "111.59.117.17",
+    "port": 9091,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9771022796630859,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "112.126.68.169:8384": {
+    "ip": "112.126.68.169",
+    "port": 8384,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8080496788024902,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "112.74.173.47:8837": {
+    "ip": "112.74.173.47",
+    "port": 8837,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7768995761871338,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "114.55.75.169:80": {
+    "ip": "114.55.75.169",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7883341312408447,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "116.196.86.230:8899": {
+    "ip": "116.196.86.230",
+    "port": 8899,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 2.0088722705841064,
+    "last_checked": "2025-05-18 17:02:53 UTC",
+    "working": true
+  },
+  "120.92.61.56:5020": {
+    "ip": "120.92.61.56",
+    "port": 5020,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.7492425441741943,
+    "last_checked": "2025-05-18 17:02:53 UTC",
+    "working": true
+  },
+  "121.43.43.217:10007": {
+    "ip": "121.43.43.217",
+    "port": 10007,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.80322265625,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "130.36.47.108:443": {
+    "ip": "130.36.47.108",
+    "port": 443,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.035909652709961,
+    "last_checked": "2025-05-18 17:02:53 UTC",
+    "working": true
+  },
+  "129.226.155.235:8080": {
+    "ip": "129.226.155.235",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8321075439453125,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "139.159.97.42:8880": {
+    "ip": "139.159.97.42",
+    "port": 8880,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8169288635253906,
+    "last_checked": "2025-05-18 17:02:53 UTC",
+    "working": true
+  },
+  "139.196.156.220:8888": {
+    "ip": "139.196.156.220",
+    "port": 8888,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7197754383087158,
+    "last_checked": "2025-05-18 17:02:52 UTC",
+    "working": true
+  },
+  "139.224.40.134:8099": {
+    "ip": "139.224.40.134",
+    "port": 8099,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7885730266571045,
+    "last_checked": "2025-05-18 17:02:53 UTC",
+    "working": true
+  },
+  "141.11.107.145:80": {
+    "ip": "141.11.107.145",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5033588409423828,
+    "last_checked": "2025-05-18 17:02:56 UTC",
+    "working": true
+  },
+  "147.161.166.35:10326": {
+    "ip": "147.161.166.35",
+    "port": 10326,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.608222246170044,
+    "last_checked": "2025-05-18 17:02:57 UTC",
+    "working": true
+  },
+  "148.206.32.3:8080": {
+    "ip": "148.206.32.3",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.18643546104431152,
+    "last_checked": "2025-05-18 17:02:56 UTC",
+    "working": true
+  },
+  "156.67.214.232:80": {
+    "ip": "156.67.214.232",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.35826563835144043,
+    "last_checked": "2025-05-18 17:02:56 UTC",
+    "working": true
+  },
+  "159.65.184.81:80": {
+    "ip": "159.65.184.81",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.22491717338562012,
+    "last_checked": "2025-05-18 17:02:59 UTC",
+    "working": true
+  },
+  "159.69.57.20:8880": {
+    "ip": "159.69.57.20",
+    "port": 8880,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5985836982727051,
+    "last_checked": "2025-05-18 17:02:59 UTC",
+    "working": true
+  },
+  "165.225.113.220:10884": {
+    "ip": "165.225.113.220",
+    "port": 10884,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.6612439155578613,
+    "last_checked": "2025-05-18 17:03:00 UTC",
+    "working": true
+  },
+  "178.33.13.233:80": {
+    "ip": "178.33.13.233",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.28858017921447754,
+    "last_checked": "2025-05-18 17:03:07 UTC",
+    "working": true
+  },
+  "178.63.237.156:80": {
+    "ip": "178.63.237.156",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5329971313476562,
+    "last_checked": "2025-05-18 17:03:07 UTC",
+    "working": true
+  },
+  "182.44.9.76:8072": {
+    "ip": "182.44.9.76",
+    "port": 8072,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8338918685913086,
+    "last_checked": "2025-05-18 17:03:08 UTC",
+    "working": true
+  },
+  "183.215.23.242:9091": {
+    "ip": "183.215.23.242",
+    "port": 9091,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9218332767486572,
+    "last_checked": "2025-05-18 17:03:08 UTC",
+    "working": true
+  },
+  "185.49.31.207:8081": {
+    "ip": "185.49.31.207",
+    "port": 8081,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5678966045379639,
+    "last_checked": "2025-05-18 17:03:12 UTC",
+    "working": true
+  },
+  "189.232.81.243:8080": {
+    "ip": "189.232.81.243",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.37375497817993164,
+    "last_checked": "2025-05-18 17:03:16 UTC",
+    "working": true
+  },
+  "190.2.143.81:80": {
+    "ip": "190.2.143.81",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5431959629058838,
+    "last_checked": "2025-05-18 17:03:16 UTC",
+    "working": true
+  },
+  "202.154.18.129:8080": {
+    "ip": "202.154.18.129",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.82753586769104,
+    "last_checked": "2025-05-18 17:03:17 UTC",
+    "working": true
+  },
+  "202.61.209.160:80": {
+    "ip": "202.61.209.160",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6348128318786621,
+    "last_checked": "2025-05-18 17:03:17 UTC",
+    "working": true
+  },
+  "203.95.198.166:8080": {
+    "ip": "203.95.198.166",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9236569404602051,
+    "last_checked": "2025-05-18 17:03:17 UTC",
+    "working": true
+  },
+  "203.95.198.177:8080": {
+    "ip": "203.95.198.177",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9218966960906982,
+    "last_checked": "2025-05-18 17:03:17 UTC",
+    "working": true
+  },
+  "34.102.48.89:8080": {
+    "ip": "34.102.48.89",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 2.452277421951294,
+    "last_checked": "2025-05-18 17:03:21 UTC",
+    "working": true
+  },
+  "5.161.80.212:3128": {
+    "ip": "5.161.80.212",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.14975261688232422,
+    "last_checked": "2025-05-18 17:03:18 UTC",
+    "working": true
+  },
+  "72.10.160.91:24923": {
+    "ip": "72.10.160.91",
+    "port": 24923,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6012372970581055,
+    "last_checked": "2025-05-18 17:03:19 UTC",
+    "working": true
+  },
+  "216.200.63.52:8080": {
+    "ip": "216.200.63.52",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.11489701271057129,
+    "last_checked": "2025-05-18 17:03:18 UTC",
+    "working": true
+  },
+  "221.6.139.190:9002": {
+    "ip": "221.6.139.190",
+    "port": 9002,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7942864894866943,
+    "last_checked": "2025-05-18 17:03:19 UTC",
+    "working": true
+  },
+  "221.225.162.227:8888": {
+    "ip": "221.225.162.227",
+    "port": 8888,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7844455242156982,
+    "last_checked": "2025-05-18 17:03:19 UTC",
+    "working": true
+  },
+  "23.247.136.254:80": {
+    "ip": "23.247.136.254",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.1586306095123291,
+    "last_checked": "2025-05-18 17:03:22 UTC",
+    "working": true
+  },
+  "27.79.185.139:16000": {
+    "ip": "27.79.185.139",
+    "port": 16000,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.4797632694244385,
+    "last_checked": "2025-05-18 17:03:23 UTC",
+    "working": true
+  },
+  "37.120.189.106:80": {
+    "ip": "37.120.189.106",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.33157944679260254,
+    "last_checked": "2025-05-18 17:03:23 UTC",
+    "working": true
+  },
+  "38.54.79.150:80": {
+    "ip": "38.54.79.150",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.49661779403686523,
+    "last_checked": "2025-05-18 17:03:23 UTC",
+    "working": true
+  },
+  "39.106.192.29:8443": {
+    "ip": "39.106.192.29",
+    "port": 8443,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.2751400470733643,
+    "last_checked": "2025-05-18 17:03:26 UTC",
+    "working": true
+  },
+  "42.112.22.6:80": {
+    "ip": "42.112.22.6",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9115912914276123,
+    "last_checked": "2025-05-18 17:03:26 UTC",
+    "working": true
+  },
+  "43.133.13.187:10809": {
+    "ip": "43.133.13.187",
+    "port": 10809,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.7459759712219238,
+    "last_checked": "2025-05-18 17:03:27 UTC",
+    "working": true
+  },
+  "43.133.136.208:8800": {
+    "ip": "43.133.136.208",
+    "port": 8800,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8825874328613281,
+    "last_checked": "2025-05-18 17:03:26 UTC",
+    "working": true
+  },
+  "43.198.66.3:3128": {
+    "ip": "43.198.66.3",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.557563304901123,
+    "last_checked": "2025-05-18 17:03:26 UTC",
+    "working": true
+  },
+  "45.129.141.143:3128": {
+    "ip": "45.129.141.143",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6346192359924316,
+    "last_checked": "2025-05-18 17:03:30 UTC",
+    "working": true
+  },
+  "45.58.52.81:80": {
+    "ip": "45.58.52.81",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.12762951850891113,
+    "last_checked": "2025-05-18 17:03:30 UTC",
+    "working": true
+  },
+  "46.29.162.222:80": {
+    "ip": "46.29.162.222",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8998935222625732,
+    "last_checked": "2025-05-18 17:03:31 UTC",
+    "working": true
+  },
+  "47.104.160.169:443": {
+    "ip": "47.104.160.169",
+    "port": 443,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8850514888763428,
+    "last_checked": "2025-05-18 17:03:31 UTC",
+    "working": true
+  },
+  "47.109.31.148:8090": {
+    "ip": "47.109.31.148",
+    "port": 8090,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.3675181865692139,
+    "last_checked": "2025-05-18 17:03:31 UTC",
+    "working": true
+  },
+  "47.92.93.226:8888": {
+    "ip": "47.92.93.226",
+    "port": 8888,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.8275258541107178,
+    "last_checked": "2025-05-18 17:03:31 UTC",
+    "working": true
+  },
+  "47.98.165.42:9128": {
+    "ip": "47.98.165.42",
+    "port": 9128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5466823577880859,
+    "last_checked": "2025-05-18 17:03:31 UTC",
+    "working": true
+  },
+  "49.229.100.235:8080": {
+    "ip": "49.229.100.235",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.1465764045715332,
+    "last_checked": "2025-05-18 17:03:31 UTC",
+    "working": true
+  },
+  "5.78.84.152:8080": {
+    "ip": "5.78.84.152",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.06313133239746094,
+    "last_checked": "2025-05-18 17:03:34 UTC",
+    "working": true
+  },
+  "50.205.202.249:3128": {
+    "ip": "50.205.202.249",
+    "port": 3128,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7401113510131836,
+    "last_checked": "2025-05-18 17:03:34 UTC",
+    "working": true
+  },
+  "61.158.175.38:9002": {
+    "ip": "61.158.175.38",
+    "port": 9002,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 1.6163582801818848,
+    "last_checked": "2025-05-18 17:03:35 UTC",
+    "working": true
+  },
+  "62.182.204.81:88": {
+    "ip": "62.182.204.81",
+    "port": 88,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7830579280853271,
+    "last_checked": "2025-05-18 17:03:34 UTC",
+    "working": true
+  },
+  "65.108.203.35:28080": {
+    "ip": "65.108.203.35",
+    "port": 28080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.4946866035461426,
+    "last_checked": "2025-05-18 17:03:34 UTC",
+    "working": true
+  },
+  "65.108.203.37:18080": {
+    "ip": "65.108.203.37",
+    "port": 18080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5063917636871338,
+    "last_checked": "2025-05-18 17:03:34 UTC",
+    "working": true
+  },
+  "68.208.221.179:80": {
+    "ip": "68.208.221.179",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.21362829208374023,
+    "last_checked": "2025-05-18 17:03:37 UTC",
+    "working": true
+  },
+  "8.152.204.59:8081": {
+    "ip": "8.152.204.59",
+    "port": 8081,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.9072444438934326,
+    "last_checked": "2025-05-18 17:03:38 UTC",
+    "working": true
+  },
+  "80.249.112.164:80": {
+    "ip": "80.249.112.164",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.5404791831970215,
+    "last_checked": "2025-05-18 17:03:38 UTC",
+    "working": true
+  },
+  "82.102.10.253:80": {
+    "ip": "82.102.10.253",
+    "port": 80,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.48282551765441895,
+    "last_checked": "2025-05-18 17:03:38 UTC",
+    "working": true
+  },
+  "91.205.196.215:8080": {
+    "ip": "91.205.196.215",
+    "port": 8080,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.7594108581542969,
+    "last_checked": "2025-05-18 17:03:38 UTC",
+    "working": true
+  },
+  "91.241.217.58:9090": {
+    "ip": "91.241.217.58",
+    "port": 9090,
+    "protocol": "http",
+    "country": "",
+    "anonymity": "unknown",
+    "speed": 0.6994185447692871,
+    "last_checked": "2025-05-18 17:03:38 UTC",
+    "working": true
+  },
+  "188.132.221.26:8080": {
+    "ip": "188.132.221.26",
+    "port": 8080,
+    "protocol": "http",
+    "country": "TR",
+    "anonymity": "unknown",
+    "speed": 2.0758750438690186,
+    "last_checked": "2025-05-18 17:03:39 UTC",
+    "working": true
+  }
+}
