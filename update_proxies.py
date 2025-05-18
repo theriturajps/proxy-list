@@ -145,4 +145,3 @@ Automatically updated repository of free public proxies. Regularly refreshed HTT
 ### Raw Text Format
 ```bash
 curl -O https://raw.githubusercontent.com/yourusername/proxy-list/main/proxies.txt
-```
