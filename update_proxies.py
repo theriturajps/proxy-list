@@ -6,11 +6,13 @@ import os
 import logging
 import concurrent.futures
 import ipaddress
+import socket
 from datetime import datetime
 from typing import Dict, List, Set, Tuple, Optional
 from dataclasses import dataclass
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import time
 
 # Configure logging
 logging.basicConfig(
@@ -21,13 +23,15 @@ logging.basicConfig(
 logger = logging.getLogger("proxy_scraper")
 
 # Constants
-TIMEOUT = 10
-MAX_WORKERS = 20  # Increased from 10 for faster processing
-VALIDATION_TIMEOUT = 5
-CONNECTION_TIMEOUT = 5
+TIMEOUT = 5  # Reduced from 10
+MAX_WORKERS = 100  # Significantly increased from 20
+VALIDATION_TIMEOUT = 2  # Reduced from 5
+CONNECTION_TIMEOUT = 2  # Reduced from 5
 VALIDATION_URL = "http://httpbin.org/ip"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 OUTPUT_DIR = "output"
+VALIDATION_BATCH_SIZE = 500  # Process proxies in larger batches
+SOCKET_TIMEOUT = 1  # Quick socket check timeout
 
 # Create output directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -87,8 +91,8 @@ class ProxyScraper:
         """Create a requests session with retries and timeouts"""
         session = requests.Session()
         retry_strategy = Retry(
-            total=3,
-            backoff_factor=1,
+            total=2,  # Reduced from 3
+            backoff_factor=0.5,  # Reduced from 1
             status_forcelist=[429, 500, 502, 503, 504],
         )
         adapter = HTTPAdapter(max_retries=retry_strategy)
@@ -223,45 +227,81 @@ class ProxyScraper:
             # Invalid IP address
             pass
     
+    def quick_filter_proxies(self) -> None:
+        """Do a quick socket check to filter obviously dead proxies before full validation"""
+        logger.info(f"Performing quick socket check on {len(self.proxies)} proxies")
+        valid_proxies = {}
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            future_to_proxy = {executor.submit(self._socket_check, proxy): proxy for proxy in self.proxies.values()}
+            
+            for future in concurrent.futures.as_completed(future_to_proxy):
+                proxy = future_to_proxy[future]
+                try:
+                    is_valid = future.result()
+                    if is_valid:
+                        valid_proxies[proxy.address] = proxy
+                except Exception:
+                    pass
+        
+        self.proxies = valid_proxies
+        logger.info(f"Quick filter complete. {len(self.proxies)} proxies passed socket check")
+    
+    def _socket_check(self, proxy: Proxy) -> bool:
+        """Check if a socket can be established with the proxy"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(SOCKET_TIMEOUT)
+            result = sock.connect_ex((proxy.ip, proxy.port))
+            sock.close()
+            return result == 0
+        except:
+            return False
+    
     def validate_proxies(self, max_workers: int = MAX_WORKERS) -> None:
         """Validate all proxies concurrently and keep track of working ones"""
         logger.info(f"Starting validation of {len(self.proxies)} proxies")
         
         # Split validation into batches to avoid overwhelming resources
-        batch_size = 100
+        batch_size = VALIDATION_BATCH_SIZE
         proxy_list = list(self.proxies.values())
         total_proxies = len(proxy_list)
         validated_count = 0
         working_count = 0
+        
+        # Use a shared session for validation to reuse connections
+        session = requests.Session()
+        session.headers.update({"User-Agent": USER_AGENT})
         
         for i in range(0, total_proxies, batch_size):
             batch = proxy_list[i:min(i+batch_size, total_proxies)]
             logger.info(f"Validating batch {i//batch_size + 1}/{(total_proxies + batch_size - 1)//batch_size}")
             
             with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-                future_to_proxy = {executor.submit(self._validate_proxy, proxy): proxy for proxy in batch}
+                # Use a simplified validation to speedup
+                future_to_proxy = {executor.submit(self._fast_validate_proxy, proxy, session): proxy for proxy in batch}
                 
                 for future in concurrent.futures.as_completed(future_to_proxy):
                     proxy = future_to_proxy[future]
                     try:
-                        proxy.working, proxy.speed = future.result()
+                        proxy.working = future.result()
                         proxy.last_checked = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
                         
                         if proxy.working:
                             working_count += 1
                             
                         validated_count += 1
-                        if validated_count % 20 == 0 or validated_count == len(batch):
+                        if validated_count % 100 == 0 or validated_count == total_proxies:
                             logger.info(f"Progress: {validated_count}/{total_proxies} proxies validated. Working: {working_count}")
                             
                     except Exception as exc:
-                        logger.error(f"Error validating {proxy.address}: {exc}")
+                        proxy.working = False
                         validated_count += 1
         
         logger.info(f"Validation complete. Working proxies: {working_count}/{total_proxies}")
     
-    def _validate_proxy(self, proxy: Proxy) -> Tuple[bool, float]:
-        """Validate a single proxy and return working status and speed"""
+    def _fast_validate_proxy(self, proxy: Proxy, session: requests.Session) -> bool:
+        """Simplified validation that just checks if the proxy works at all"""
         proxy_url = f"{proxy.protocol}://{proxy.address}"
         proxies = {
             "http": proxy_url,
@@ -269,36 +309,22 @@ class ProxyScraper:
         }
         
         try:
-            start_time = datetime.now()
-            response = requests.get(
+            start_time = time.time()
+            response = session.get(
                 VALIDATION_URL, 
                 proxies=proxies, 
-                timeout=VALIDATION_TIMEOUT,
-                headers={"User-Agent": USER_AGENT}
+                timeout=VALIDATION_TIMEOUT
             )
-            end_time = datetime.now()
+            end_time = time.time()
             
             if response.status_code == 200:
-                speed = (end_time - start_time).total_seconds()
-                # Verify the response contains the proxy's IP (anonymous check)
-                try:
-                    data = response.json()
-                    if "origin" in data:
-                        # For anonymous proxies, the origin might be different from the proxy IP
-                        if data["origin"] != proxy.ip:
-                            proxy.anonymity = "high"
-                        else:
-                            proxy.anonymity = "transparent"
-                    return True, speed
-                except json.JSONDecodeError:
-                    # If response is not valid JSON, still mark as working but cannot determine anonymity
-                    proxy.anonymity = "unknown"
-                    return True, speed
-        except requests.exceptions.RequestException:
-            # Any request exception means the proxy is not working
+                proxy.speed = end_time - start_time
+                proxy.anonymity = "unknown"  # Skip detailed anonymity check for speed
+                return True
+        except:
             pass
             
-        return False, 0.0
+        return False
     
     def save_results(self) -> None:
         """Save proxies to different output formats"""
@@ -361,20 +387,7 @@ class ProxyScraper:
         now = datetime.utcnow().strftime("%A %d-%m-%Y %H:%M:%S UTC")
         total_proxies = len([p for p in self.proxies.values() if p.working])
         
-        # Count proxies by anonymity level
-        anonymity_levels = {
-            "transparent": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "transparent"),
-            "anonymous": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "anonymous"),
-            "high": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "high"),
-            "unknown": sum(1 for p in self.proxies.values() if p.working and p.anonymity == "unknown"),
-        }
-        
-        # Create statistics by country if available
-        countries = {}
-        for proxy in self.proxies.values():
-            if proxy.working and proxy.country:
-                countries[proxy.country] = countries.get(proxy.country, 0) + 1
-        
+        # Create simplified readme without detailed statistics for speed
         readme_content = f"""# Proxy List
 
 Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies for web scraping, cybersecurity, and testing. Raw list available.
@@ -382,67 +395,11 @@ Automatically updated repository of free public proxies. Hourly refreshed HTTP/H
 **Last Updated:** `{now}`  
 **Total Proxies:** `{total_proxies}`
 
-## 📊 Statistics
-
-- **Anonymity Levels**:
-  - High Anonymous: `{anonymity_levels['high']}`
-  - Anonymous: `{anonymity_levels['anonymous']}`
-  - Transparent: `{anonymity_levels['transparent']}`
-  - Unknown: `{anonymity_levels['unknown']}`
-
 ## 📥 Download
 ```bash
 curl -O https://raw.githubusercontent.com/theriturajps/proxy-list/main/proxies.txt
 ```
-
-### Advanced Formats (with detailed information)
-```bash
-# JSON Format
-curl -O https://raw.githubusercontent.com/theriturajps/proxy-list/main/output/working_proxies.json
-
-# CSV Format
-curl -O https://raw.githubusercontent.com/theriturajps/proxy-list/main/output/working_proxies.csv
-```
-
-## 📋 Usage Examples
-
-### Python
-```python
-import requests
-
-with open('proxies.txt', 'r') as f:
-    proxies = [line.strip() for line in f if line.strip()]
-
-for proxy in proxies:
-    try:
-        response = requests.get(
-            'http://httpbin.org/ip', 
-            proxies={'http': f'http://{proxy}', 'https': f'http://{proxy}'}, 
-            timeout=5
-        )
-        if response.status_code == 200:
-            print(f"Working proxy: {proxy}")
-            break
-    except:
-        continue
-```
-
-### curl
-```bash
-proxy=$(head -n 1 proxies.txt)
-curl -x "http://$proxy" http://httpbin.org/ip
-```
-
-## 🛠️ Features
-- Hourly automatic updates via GitHub Actions
-- Proxy validation to ensure all proxies are working
-- Multiple output formats (TXT, JSON, CSV)
-- Anonymity level detection
-- Response time measurement
-
-## ⚠️ Disclaimer
-The proxies provided by this repository are free public proxies that are collected from various sources. They are provided for educational and testing purposes only. We do not guarantee their stability, anonymity, or legality for any specific use case.
-"""
+        """
 
         with open("README.md", "w") as f:
             f.write(readme_content)
@@ -451,7 +408,11 @@ The proxies provided by this repository are free public proxies that are collect
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     scraper = ProxyScraper()
     scraper.scrape_all_sources()
+    scraper.quick_filter_proxies()  # Add quick socket check before full validation
     scraper.validate_proxies()
     scraper.save_results()
+    end_time = time.time()
+    logger.info(f"Total execution time: {end_time - start_time:.2f} seconds")
