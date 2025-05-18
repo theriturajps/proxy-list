@@ -1,9 +1,9 @@
-name: Proxy List
+name: Proxy List Update
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '0 * * * *'  # Run hourly
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   update:
@@ -12,23 +12,46 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history to avoid git conflicts
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+        cache: 'pip'
 
     - name: Install dependencies
-      run: pip install requests
-
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests ipaddress concurrent-futures-cache typing-extensions dataclasses
+        
+    - name: Create output directory
+      run: mkdir -p output
+        
     - name: Update proxies
       run: python update_proxies.py
-
-    - name: Commit changes
+      
+    - name: Commit and push if changes
       run: |
         git config --global user.name "Ritu Raj Pratap Singh"
         git config --global user.email "theriturajps@gmail.com"
+        
+        # Add all changes
         git add .
-        git commit -m "Updated ➠ $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
-        git push
+        
+        # Check if there are changes to commit
+        if ! git diff-index --quiet HEAD; then
+          # Get the count of working proxies
+          PROXY_COUNT=$(wc -l < proxies.txt)
+          
+          # Create a detailed commit message
+          git commit -m "Updated ➠ $(date -u +'%Y-%m-%d %H:%M UTC') [$PROXY_COUNT proxies]"
+          
+          # Push changes
+          git push
+        else
+          echo "No changes to commit"
+        fi
