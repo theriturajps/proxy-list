@@ -64,7 +64,7 @@ def update_readme(count):
         with open("README.md", "r") as f:
             content = f.read()
     except FileNotFoundError:
-        content = """# Proxy List
+        content = """# Advanced Proxy List
 
 Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies in both TXT and JSON formats.
 

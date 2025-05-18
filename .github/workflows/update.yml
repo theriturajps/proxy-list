@@ -1,4 +1,8 @@
-name: Proxy List Updater
+
+3. Updated `update.yml` workflow:
+
+```yaml
+name: Advanced Proxy List Updater
 
 on:
   schedule:
@@ -27,12 +31,12 @@ jobs:
       run: pip install requests
 
     - name: Update proxies
-      run: python update_proxies.py
+      run: python proxies.py
 
     - name: Commit changes
       run: |
         git config --global user.name "Proxy List Updater"
         git config --global user.email "proxy-updater@users.noreply.github.com"
         git add .
-        git commit -m "Auto-update proxies [skip ci] - $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
+        git commit -m "Updated ➠ $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
         git push
