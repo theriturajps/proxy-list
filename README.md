@@ -2,8 +2,8 @@
 
 Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies in both TXT and JSON formats.
 
-**Last Updated:** `Monday 07-07-2025 23:09:02 UTC`  
-**Total Proxies:** `41191`
+**Last Updated:** `Tuesday 08-07-2025 00:46:08 UTC`  
+**Total Proxies:** `41087`
 
 ## Features
 - Multiple reliable sources
