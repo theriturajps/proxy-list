@@ -33,8 +33,6 @@ jobs:
       run: |
         mkdir -p docs
         cp proxies.json docs/
-        cp index.html docs/
-        cp style.css docs/
 
     - name: Commit changes
       run: |
