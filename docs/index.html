@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Proxy List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-globe"></i> Advanced Proxy List</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="last-updated">Loading...</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-server"></i>
+                    <span id="proxy-count">0</span> Proxies
+                </div>
+            </div>
+            <div class="controls">
+                <input type="text" id="search" placeholder="Search proxies..." class="search-input">
+                <button id="copy-all" class="btn"><i class="fas fa-copy"></i> Copy All</button>
+                <button id="download-txt" class="btn"><i class="fas fa-download"></i> TXT</button>
+                <button id="download-json" class="btn"><i class="fas fa-download"></i> JSON</button>
+            </div>
+        </header>
+        <div class="proxy-list-container">
+            <table id="proxy-table">
+                <thead>
+                    <tr>
+                        <th>IP Address</th>
+                        <th>Port</th>
+                        <th>Country</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="proxy-list">
+                    <!-- Proxies will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button id="prev-page" disabled><i class="fas fa-chevron-left"></i></button>
+            <span id="page-info">Page 1 of 1</span>
+            <button id="next-page" disabled><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <footer>
+            <p>Automatically updated every hour | <a href="https://github.com/theriturajps/proxy-list" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

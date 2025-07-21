@@ -1,6 +1,6 @@
-# Proxy List
+# Advanced Proxy List
 
-Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies in both TXT and JSON formats.
+Automatically updated repository of free public proxies. Hourly refreshed HTTP/HTTPS proxies in both TXT and JSON formats with a web interface.
 
 **Last Updated:** `Monday 21-07-2025 05:18:50 UTC`  
 **Total Proxies:** `39651`
@@ -10,6 +10,8 @@ Automatically updated repository of free public proxies. Hourly refreshed HTTP/H
 - Concurrent fetching for faster updates
 - Both TXT and JSON formats
 - Detailed metadata
+- Web interface for easy browsing
+- Automatic hourly updates
 
 ## 📥 Download
 

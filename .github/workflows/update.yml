@@ -29,10 +29,17 @@ jobs:
     - name: Update proxies
       run: python proxies.py
 
+    - name: Build website
+      run: |
+        mkdir -p docs
+        cp proxies.json docs/
+        cp index.html docs/
+        cp style.css docs/
+
     - name: Commit changes
       run: |
         git config --global user.name "Ritu Raj Pratap Singh"
         git config --global user.email "theriturajps@gmail.com"
         git add .
-        git commit -m "Updated ➠ $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
+        git commit -m "Auto-update proxies and website ➠ $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
         git push
