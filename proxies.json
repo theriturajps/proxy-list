@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-09-28T14:04:40.267706Z",
+    "last_updated": "2025-09-28T15:07:01.269345Z",
     "count": 41826,
     "sources": [
       "https://api.proxyscrape.com/v3/free-proxy-list/get?request=displayproxies&protocol=http",
